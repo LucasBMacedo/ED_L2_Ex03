@@ -5,19 +5,15 @@ public class QtdDeParesNoVetor {
 	public QtdDeParesNoVetor() {
 		super ();
 	}
-	public int QtdParVet(int [] vetor, int contador1, int contador2) {
-		if (contador2 == vetor.length) {
-			return contador1;
+	public int QtdContarNumerosParesNoVetor(int [] vetor, int i) {
+		if (i == vetor.length) {
+			return 0;
 		}
-		if (vetor[contador2] % 2 == 0) {
-			contador1++;
-			contador2++;
-			return QtdParVet(vetor, contador1, contador2);
+		if (vetor[i] % 2 == 0) {
+			return 1 + QtdContarNumerosParesNoVetor(vetor, i + 1);
 		}
 		else {
-			contador2++;
-			return QtdParVet(vetor, contador1, contador2);
+			return QtdContarNumerosParesNoVetor(vetor, i + 1);
 		}
 	}
-
 }
